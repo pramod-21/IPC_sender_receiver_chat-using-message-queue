@@ -5,6 +5,7 @@ The output of the program and commands to execute the program
 
 
 pramod@Pramod:~/c_programs/IPC_programs$ gcc -o sender sender_chat.c
+
 pramod@Pramod:~/c_programs/IPC_programs$ ./sender
 Enter your name: Pramod
 Type messages (Ctrl+C to quit):
@@ -17,6 +18,7 @@ How are you Pramod
 
 
 pramod@Pramod:~/c_programs/IPC_programs$ gcc -o receiver receiver_chat.c
+
 pramod@Pramod:~/c_programs/IPC_programs$ ./receiver
 Listening for messages...
 [Pramod]: hello
