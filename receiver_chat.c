@@ -1,4 +1,4 @@
-// chat_receive.c
+//receiver_chat.c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -29,9 +29,18 @@ int main() {
             perror("msgrcv");
             exit(1);
         }
+
+        // Check for exit signal
+        if (strcmp(message.text, "__EXIT__") == 0) {
+            printf("[System]: %s has left the chat.\n", message.sender);
+            break;
+        }
+
         printf("[%s]: %s\n", message.sender, message.text);
     }
 
+    // Cleanup
+    msgctl(msgid, IPC_RMID, NULL);
     return 0;
 }
 
